@@ -1,122 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --pink: #ff6b9d;
+    --pink-light: #ffe4ee;
+    --purple: #8064d8;
+    --purple-light: #eee8ff;
+    --cream: #fffaf5;
+    --white: #ffffff;
+    --text: #34263d;
+    --muted: #776b80;
+    --shadow: 0 12px 35px rgba(87, 54, 100, 0.10);
+    --radius: 22px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #fff0f5;
-    color: #513747;
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    font-family: 'Nunito', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--cream);
 }
 
-h1 {
-    color: #e75480;
+/* HLAVICKA */
+
+header {
+    position: relative;
+    overflow: hidden;
+    padding: 38px 20px 28px;
     text-align: center;
+    background: linear-gradient(135deg, #ffd4e4 0%, #f1dcff 55%, #fff0ce 100%);
 }
 
-h2 {
-    color: #bd4775;
+header::before {
+    content: "🍦";
+    position: absolute;
+    top: 8px;
+    left: 7%;
+    font-size: 45px;
+    opacity: 0.35;
+    transform: rotate(-18deg);
 }
 
-p {
-    font-size: 17px;
+header::after {
+    content: "🍓";
+    position: absolute;
+    right: 8%;
+    bottom: 10px;
+    font-size: 42px;
+    opacity: 0.35;
+    transform: rotate(15deg);
 }
 
-li {
-    margin-bottom: 10px;
-}
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
+header h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 18px;
+    color: #5a367a;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
 }
 
-
+/* NAVIGACNI MENU */
 
 nav {
-    margin: 20px 0;
-    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 auto;
 }
 
 nav a {
     display: inline-block;
-    color: #bd4775;
-    font-weight: bold;
+    padding: 10px 20px;
+    color: #5a367a;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 800;
     text-decoration: none;
-    padding: 8px 12px;
+    transition: transform 0.2s ease,
+                background 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
 nav a:hover {
-    color: #ffffff;
-    background-color: #e75480;
-    border-radius: 10px;
+    color: var(--white);
+    background: var(--purple);
+    box-shadow: 0 5px 15px rgba(128, 100, 216, 0.25);
+    transform: translateY(-3px);
 }
 
-/* Vylepšení vzhledu webu */
+/* HLAVNI OBSAH */
 
-body {
-    line-height: 1.6;
-}
-
-h1 {
-    background: linear-gradient(90deg, #e75480, #ff9f68);
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-body > h1 {
-    margin-top: 0;
+main {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: 45px 24px;
 }
 
 h2 {
-    margin-top: 25px;
+    margin-top: 32px;
+    margin-bottom: 14px;
+    color: #7547a5;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1.3;
 }
 
-body > p,
-body > ul,
-body > h2,
-body > img {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+h3 {
+    color: #7547a5;
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px #00000018;
+p {
+    margin-top: 0;
+    color: var(--muted);
+}
+
+ul {
+    padding-left: 25px;
 }
 
 li {
     padding: 4px 0;
 }
 
+/* UVODNI SEKCE */
+
+.hero {
+    padding: 40px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffe7ef, #f0e8ff);
+    border: 1px solid #f5e3f4;
+    border-radius: 30px;
+}
+
+.hero h2 {
+    margin-top: 10px;
+    color: #5a367a;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -1px;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: 12px auto;
+    font-size: 1.08rem;
+}
+
+.uvod {
+    color: #d64e87;
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* ODKAZY */
+
 a {
+    color: #b83f82;
+    font-weight: 800;
+    text-underline-offset: 4px;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #e75480;
+    color: var(--purple);
 }
+
+/* OBRÁZKY */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 760px;
+    height: 360px;
+    margin: 28px auto;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    border: 5px solid var(--white);
+}
+
+/* KARTY PRICHUTI */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    overflow: hidden;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid #f1e7f1;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(87, 54, 100, 0.16);
+}
+
+.card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.card h3 {
+    margin: 17px 0 8px;
+}
+
+.card p {
+    margin-bottom: 8px;
+}
+
+/* GALERIE */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.gallery figure {
+    overflow: hidden;
+    margin: 0;
+    padding: 12px;
+    background: var(--white);
+    border: 1px solid #f1e7f1;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+}
+
+.gallery figure:hover {
+    transform: translateY(-5px);
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.35s ease;
+}
+
+.gallery figure:hover img {
+    transform: scale(1.03);
+}
+
+.gallery figcaption {
+    padding: 13px 5px 5px;
+    color: #7547a5;
+    text-align: center;
+    font-weight: 900;
+}
+
+/* ODDILY A KARTY OBSAHU */
+
+section {
+    margin-bottom: 35px;
+}
+
+main > section:not(.hero):not(.cards):not(.gallery) {
+    padding: 24px;
+    background: var(--white);
+    border: 1px solid #f1e7f1;
+    border-radius: var(--radius);
+}
+
+/* SEZNAMY */
+
+main ul li::marker {
+    color: var(--pink);
+}
+
+/* PATICKA */
 
 footer {
-    margin-top: 40px;
-    padding: 15px;
+    margin-top: 25px;
+    padding: 28px 20px;
     text-align: center;
-    background-color: #ffdce8;
-    border-radius: 15px;
+    background: #f0e5ff;
+    border-top: 1px solid #e5d5fa;
 }
 
-@media (max-width: 600px) {
-    body {
-        padding: 12px;
+footer p {
+    margin: 4px 0;
+    color: #69517e;
+    font-size: 0.95rem;
+}
+
+/* MOBILNI TELEFONY A TABLETY */
+
+@media (max-width: 750px) {
+    header {
+        padding: 30px 15px 23px;
     }
 
-    h1 {
-        font-size: 25px;
+    header::before,
+    header::after {
+        font-size: 28px;
+    }
+
+    nav {
+        gap: 7px;
     }
 
     nav a {
-        padding: 6px;
+        padding: 8px 13px;
+        font-size: 0.88rem;
+    }
+
+    main {
+        padding: 28px 16px;
+    }
+
+    .hero {
+        padding: 28px 17px;
+        border-radius: 22px;
+    }
+
+    .hero img {
+        height: 260px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .gallery img {
+        height: 190px;
     }
 }
 
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 240px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
