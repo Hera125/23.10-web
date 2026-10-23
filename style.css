@@ -28,3 +28,24 @@ img {
     border-radius: 15px;
 }
 
+
+
+nav {
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: #bd4775;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    background-color: #e75480;
+    border-radius: 10px;
+}
+
