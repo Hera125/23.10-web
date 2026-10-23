@@ -1,1 +1,25 @@
+body {
+    background-color: #fff0f5;
+    color: #513747;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #e75480;
+    text-align: center;
+}
+
+h2 {
+    color: #bd4775;
+}
+
+p {
+    font-size: 17px;
+}
+
+li {
+    margin-bottom: 10px;
+}
 
